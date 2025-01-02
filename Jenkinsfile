@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    triggers {
-    githubPush()
-    }
     stages {
         stage('Build') {
             agent {
@@ -23,7 +20,8 @@ pipeline {
             }
         }
 
-        stage('Test'){
+        stage('Test')
+        {
             agent {
                 docker {
                     image 'node:18-alpine'
